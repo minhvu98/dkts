@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>Insert title here</title>
+</head>
+<body>
+	<section id="admin-content" class="p-3" layout:fragment="noidung">
+		<h3 class="mb-3">Danh sách quyền</h3>
+		<div class="row">
+		</div>
+		<table class="table table-bordered table-hover mt-3">
+			<thead>
+				<tr>
+					<th>STT</th>
+					<th>Họ tên</th>
+					<th>Email</th>
+					<th>Giới tính</th>
+					<th>Số báo danh</th>
+					<th>Điểm toán</th>
+					<th>Điểm anh</th>
+					<th>Điểm văn</th>
+					<th>Tổng điểm</th>
+					<th>Học lực lớp 6</th>
+					<th>Hạnh kiểm lớp 6</th>
+					<th>Học lực lớp 7</th>
+					<th>Hạnh kiểm lớp 7</th>
+					<th>Học lực lớp 8</th>
+					<th>Hạnh kiểm lớp 8</th>
+					<th>Học lực lớp 9</th>
+					<th>Hạnh kiểm lớp 9</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="item : ${user}">
+					<td th:text="${item.id}"></td>
+					<td th:text="${item.fullname}"></td>
+					<td th:text="${item.email}"></td>
+					<td th:text="${item.sex}"></td>
+					<td th:text="${item.birthday}"></td>
+					<td th:text="${item.identification}"></td>
+					<td th:text="${item.math_mark}"></td>
+					<td th:text="${item.english_mark}"></td>
+					<td th:text="${item.literature_mark}"></td>
+					<td th:text="${item.total_mark}"></td>
+					<td th:text="${item.six_academic}"></td>
+					<td th:text="${item.six_conduct}"></td>
+					<td th:text="${item.sevent_academic}"></td>
+					<td th:text="${item.sevent_conduct}"></td>
+					<td th:text="${item.eight_academic}"></td>
+					<td th:text="${item.eight_conduct}"></td>
+					<td th:text="${item.nine_academic}"></td>
+					<td th:text="${item.nine_conduct}"></td>
+					<td>
+						<a th:href="@{/role/edit(id=${item.id})}" class="btn btn-sm btn-info">
+							<i class="fa fa-pencil-square-o"></i>
+						</a> 
+						<a th:href="@{/role/delete/{id}(id=${item.id})}" class="btn btn-sm btn-danger"> 
+							<i class="fa fa-trash-o"></i>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/layout/default">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section id="admin-content" class="p-3" layout:fragment="noidung">
+		<form class="jotform-form" th:action="@{/dk/add2}" th:object="${conduct}"
+			method="post" name="form_202113781599459" id="202113781599459"
+			accept-charset="utf-8" autocomplete="on">
+			<div role="main" class="form-all">
+				<ul class="form-section page-section">
+					<li id="cid_11" class="form-input-wide" data-type="control_head">
+						<div class="form-header-group  header-large">
+							<div class="header-text httal htvam">
+								<h1 id="header_11" class="form-header" data-component="header">
+									TRANG ĐĂNG KÝ TUYỂN SINH TRỰC TUYẾN</h1>
+									
+							</div>
+							<span id="header_11" class="form-header" data-component="header">
+								KẾT QUẢ HỌC TẬP - RÈN LUYỆN 04 NĂM THCS</span>
+						</div>
+
+					</li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 6 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{six_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 6 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{six_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 7 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{sevent_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 7 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{sevent_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 8 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{eight_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 8 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{eight_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 9 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{nine_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 9 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{nine_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Primary Residence">Giỏi</option>
+								<option value="Secondary Residence">Khá</option>
+								<option value="Investment">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line" data-type="control_button" id="id_7">
+						<div id="cid_34" class="form-input-wide">
+							<div style="margin-left: 156px" data-align="auto"
+								class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+								<button id="input_7" type="submit"
+									class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+									data-component="button" data-content="">Gửi</button>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</form>
+	</section>
+</body>
+</html>

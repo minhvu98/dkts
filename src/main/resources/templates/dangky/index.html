@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/layout/default">
+<head>
+<title>Trang chủ</title>
+</head>
+<body>
+	<section id="admin-content" class="p-3" layout:fragment="noidung">
+		<form class="jotform-form" th:action="@{/dk/add}" th:object="${user}"
+			method="post" name="form_202113781599459" id="202113781599459"
+			accept-charset="utf-8" autocomplete="on">
+			<div role="main" class="form-all">
+				<ul class="form-section page-section">
+					<li id="cid_11" class="form-input-wide" data-type="control_head">
+						<div class="form-header-group  header-large">
+							<div class="header-text httal htvam">
+								<h1 id="header_11" class="form-header" data-component="header">
+									TRANG ĐĂNG KÝ TUYỂN SINH TRỰC TUYẾN</h1>
+									<h1 h:text="${user.fullname}"></h1>
+							</div>
+						</div>
+					</li>
+					<li class="form-line jf-required" data-type="control_fullname"
+						id="id_34"><label
+						class="form-label form-label-left form-label-auto" id="label_34"
+						for="first_34"> Họ Tên <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_34" class="form-input jf-required">
+							<div data-wrapper-react="true">
+								<span class="form-sub-label-container "
+									style="vertical-align: top" data-input-type="first"> <input
+									type="text" id="" th:field="*{fullname}"
+									class="form-textbox validate[required]" size="10" value="" />
+								</span>
+							</div>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_checkbox"
+						id="id_25"><label
+						class="form-label form-label-left form-label-auto" id="label_25"
+						for="input_25"> Giới tính <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_25" class="form-input jf-required">
+							<div class="form-multiple-column" data-columncount="2"
+								role="group" aria-labelledby="label_25"
+								data-component="checkbox">
+
+								<input type="radio" th:field=*{sex} th:name="sex" value="nam">
+								<label for="female">Nam</label><br> 
+								<input type="radio" th:field=*{sex} th:name="sex" value="nu"> 
+								<label for="female">Nu</label><br>
+
+							</div>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_fullname"
+						id="id_34"><label
+						class="form-label form-label-left form-label-auto" id="label_34"
+						for="first_34"> Ngày sinh <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_34" class="form-input jf-required">
+							<div data-wrapper-react="true">
+								<span class="form-sub-label-container "
+									style="vertical-align: top" data-input-type="first"> 
+									<input type="text" id="" th:field=*{birthday}
+									class="form-textbox validate[required]" size="10" value="" placeholder="ex: dd-mm-yyyy" />
+								</span>
+							</div>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_email"
+						id="id_35"><label
+						class="form-label form-label-left form-label-auto" id="label_35"
+						for="input_35"> E-mail <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_35" class="form-input jf-required">
+							<input type="email" id="input_35" th:field="*{email}"
+								class="form-textbox validate[required, Email]" size="30"
+								value="" placeholder="ex: myname@example.com"
+								data-component="email" aria-labelledby="label_35" required="" />
+						</div>
+					<li class="form-line jf-required" data-type="control_fullname"
+						id="id_34"><label
+						class="form-label form-label-left form-label-auto" id="label_34"
+						for="first_34"> Số báo danh <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_34" class="form-input jf-required">
+							<div data-wrapper-react="true">
+								<label class="form-sub-label" for="first_34"
+									id="sublabel_34_first" style="min-height: 13px"
+									aria-hidden="false"> Số báo danh thí sinh kỳ thi Tuyển
+									sinh 10 THPT năm học 2020-2021 </label> <span
+									class="form-sub-label-container " style="vertical-align: top"
+									data-input-type="first"> <input type="text" id=""
+									th:field="*{identification}"
+									class="form-textbox validate[required]" size="10" value="" />
+								</span>
+							</div>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_fullname"
+						id="id_34"><label
+						class="form-label form-label-left form-label-auto" id="label_34"
+						for="first_34"> Điểm toán <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_34" class="form-input jf-required">
+							<div data-wrapper-react="true">
+								<label class="form-sub-label" for="first_34"
+									id="sublabel_34_first" style="min-height: 13px"
+									aria-hidden="false"></label> <span
+									class="form-sub-label-container " style="vertical-align: top"
+									data-input-type="first"> <input type="text" id=""
+									th:field="*{math_mark}" class="form-textbox validate[required]"
+									size="10" value="" />
+								</span>
+							</div>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_fullname"
+						id="id_34"><label
+						class="form-label form-label-left form-label-auto" id="label_34"
+						for="first_34"> Điểm văn <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_34" class="form-input jf-required">
+							<div data-wrapper-react="true">
+								<label class="form-sub-label" for="first_34"
+									id="sublabel_34_first" style="min-height: 13px"
+									aria-hidden="false"></label> <span
+									class="form-sub-label-container " style="vertical-align: top"
+									data-input-type="first"> <input type="text" id=""
+									th:field="*{literature_mark}"
+									class="form-textbox validate[required]" size="10" value="" />
+								</span>
+							</div>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_fullname"
+						id="id_34"><label
+						class="form-label form-label-left form-label-auto" id="label_34"
+						for="first_34"> Điểm anh văn <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_34" class="form-input jf-required">
+							<div data-wrapper-react="true">
+								<span class="form-sub-label-container "
+									style="vertical-align: top" data-input-type="first"> <input
+									type="text" id="" th:field="*{english_mark}"
+									class="form-textbox validate[required]" size="10" value="" />
+								</span>
+							</div>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_fullname"
+						id="id_34"><label
+						class="form-label form-label-left form-label-auto" id="label_34"
+						for="first_34"> Tổng điểm <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_34" class="form-input jf-required">
+							<div data-wrapper-react="true">
+								<label class="form-sub-label" for="first_34"
+									id="sublabel_34_first" style="min-height: 13px"
+									aria-hidden="false"> Tổng điểm thi kỳ thi Tuyển sinh 10
+									THPT năm học 2020-2021</label> <span class="form-sub-label-container "
+									style="vertical-align: top" data-input-type="first"> <input
+									type="text" id="" th:field="*{total_mark}"
+									class="form-textbox validate[required]" size="10" value="" />
+								</span>
+							</div>
+						</div></li>
+						<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 6 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{six_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 6 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{six_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 7 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{sevent_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 7 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{sevent_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 8 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{eight_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 8 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{eight_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Học lực lớp 9 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{nine_academic}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+					<li class="form-line jf-required" data-type="control_dropdown"
+						id="id_16"><label
+						class="form-label form-label-left form-label-auto" id="label_16"
+						for="input_16"> Hạnh kiểm lớp 9 <span class="form-required">
+								* </span>
+					</label>
+						<div id="cid_16" class="form-input jf-required">
+							<select class="form-dropdown validate[required]" id="input_16"
+								th:field="*{nine_conduct}" style="width: 150px" data-component="dropdown"
+								required="" aria-labelledby="label_16">
+								<option value="">Chọn</option>
+								<option value="Gioi">Giỏi</option>
+								<option value="Kha">Khá</option>
+								<option value="Trung binh">Trung Bình</option>
+							</select>
+						</div></li>
+						
+					<li class="form-line" data-type="control_button" id="id_7">
+						<div id="cid_34" class="form-input-wide">
+							<div style="margin-left: 156px" data-align="auto"
+								class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+								<button id="input_7" type="submit"
+									class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+									data-component="button" data-content="">Gửi</button>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+				</ul>
+			</div>
+			<script>
+				JotForm.showJotFormPowered = "new_footer";
+			</script>
+			<script>
+				JotForm.poweredByText = "Powered by JotForm";
+			</script>
+			<input type="hidden" id="simple_spc" name="simple_spc"
+				value="202113781599459" />
+			<script type="text/javascript">
+				document.getElementById("si" + "mple" + "_spc").value = "202113781599459-202113781599459";
+			</script>
+		</form>
+	</section>
+</body>
+
+</html>
