@@ -34,8 +34,14 @@ public class UserServiceImpl implements UserService{
 
 
 	public UserDto findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = userRepository.findById(id).get();
+		return new UserDto(user.getId(),user.getFullname(),user.getEmail(),
+				user.getSex(),user.getBirthday(),user.getIdentification(),
+				user.getMath_mark(),user.getEnglish_mark(),user.getLiterature_mark(),
+				user.getTotal_mark(),user.getSix_academic(),user.getSix_conduct(),
+				user.getSevent_academic(),user.getSevent_conduct(),
+				user.getEight_academic(),user.getEight_conduct(),
+				user.getNine_academic(),user.getNine_conduct());
 	}
 
 
@@ -65,17 +71,45 @@ public class UserServiceImpl implements UserService{
 
 
 	public void update(UserDto dto) {
+		User user = userRepository.findById(dto.getId()).get();
+		user.setFullname(dto.getFullname());
+		user.setEmail(dto.getEmail());
+		user.setSex(dto.getSex());
+		user.setBirthday(dto.getBirthday());
+		user.setIdentification(dto.getIdentification());
+		user.setMath_mark(dto.getMath_mark());
+		user.setEnglish_mark(dto.getEnglish_mark());
+		user.setLiterature_mark(dto.getLiterature_mark());
+		user.setTotal_mark(dto.getTotal_mark());
+		user.setSix_academic(dto.getSix_academic());
+		user.setSix_conduct(dto.getSix_conduct());
+		user.setSevent_academic(dto.getSevent_academic());
+		user.setSevent_conduct(dto.getSevent_conduct());
+		user.setEight_academic(dto.getEight_academic());
+		user.setEight_conduct(dto.getEight_conduct());
+		user.setNine_academic(dto.getNine_academic());
+		user.setNine_conduct(dto.getNine_conduct());
+		userRepository.save(user);
 	}
 	
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+		userRepository.deleteById(id);
 	}
 
 	@Override
 	public List<UserDto> search(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
+		List<UserDto> dtos = new ArrayList<UserDto>();
+		List<User> users = userRepository.search(keyword);
+		for (User user : users) {
+			dtos.add(new UserDto(user.getId(),user.getFullname(),user.getEmail(),
+					user.getSex(),user.getBirthday(),user.getIdentification(),
+					user.getMath_mark(),user.getEnglish_mark(),user.getLiterature_mark(),
+					user.getTotal_mark(),user.getSix_academic(),user.getSix_conduct(),
+					user.getSevent_academic(),user.getSevent_conduct(),
+					user.getEight_academic(),user.getEight_conduct(),
+					user.getNine_academic(),user.getNine_conduct()));
+		}
+		return dtos;
 	}
 	
 }

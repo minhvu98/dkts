@@ -8,11 +8,12 @@
 </head>
 <body>
 	<section id="admin-content" class="p-3" layout:fragment="noidung">
-		<form class="jotform-form" th:action="@{/dk/add}" th:object="${user}"
+		<form class="jotform-form" th:action="@{/manager/edit}" th:object="${user}"
 			method="post" name="form_202113781599459" id="202113781599459"
 			accept-charset="utf-8" autocomplete="on">
 			<div role="main" class="form-all">
 				<ul class="form-section page-section">
+				<input type="hidden" th:field="*{id}"/>
 					<li id="cid_11" class="form-input-wide" data-type="control_head">
 						<div class="form-header-group  header-large">
 							<div class="header-text httal htvam">
@@ -300,7 +301,7 @@
 								class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
 								<button id="input_7" type="submit"
 									class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
-									data-component="button" data-content="">Gửi</button>
+									data-component="button" data-content="">Lưu</button>
 							</div>
 						</div>
 					</li>

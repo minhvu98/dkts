@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	class="supernova">
+	<link type="text/css" rel="stylesheet" th:href="@{/css/styles/custom.css}" />
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <head>
 	<title>Insert title here</title>
 </head>
 <body>
 	<section id="admin-content" class="p-3" layout:fragment="noidung">
 		<h3 class="mb-3">Danh sách quyền</h3>
-		<div class="row">
-		</div>
+					<div class="col-md-4">
+				<form th:action="@{/manager/search}" method="get">
+					<div class="input-group">
+						<input type="text" name="keyword" class="form-control"
+							placeholder="Tìm kiếm...">
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-addon2"><i
+								class="fa fa-search"></i></span>
+						</div>
+					</div>
+				</form>
+			</div>
 		<table class="table table-bordered table-hover mt-3">
 			<thead>
 				<tr>
@@ -16,6 +30,7 @@
 					<th>Họ tên</th>
 					<th>Email</th>
 					<th>Giới tính</th>
+					<th>Ngày sinh</th>
 					<th>Số báo danh</th>
 					<th>Điểm toán</th>
 					<th>Điểm anh</th>
@@ -29,6 +44,7 @@
 					<th>Hạnh kiểm lớp 8</th>
 					<th>Học lực lớp 9</th>
 					<th>Hạnh kiểm lớp 9</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,11 +68,11 @@
 					<td th:text="${item.nine_academic}"></td>
 					<td th:text="${item.nine_conduct}"></td>
 					<td>
-						<a th:href="@{/role/edit(id=${item.id})}" class="btn btn-sm btn-info">
-							<i class="fa fa-pencil-square-o"></i>
+						<a th:href="@{/manager/edit(id=${item.id})}" class="btn btn-sm btn-info">
+							<i class="fa fa-pencil-square-o">Sửa</i>
 						</a> 
-						<a th:href="@{/role/delete/{id}(id=${item.id})}" class="btn btn-sm btn-danger"> 
-							<i class="fa fa-trash-o"></i>
+						<a th:href="@{/manager/delete/{id}(id=${item.id})}" class="btn btn-sm btn-danger"> 
+							<i class="fa fa-trash-o">Xóa</i>
 						</a>
 					</td>
 				</tr>
